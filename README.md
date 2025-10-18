@@ -32,7 +32,23 @@
 
 ## STEP 2: SETUP AWS DMS (Database Migration Service)
 
-1. 
+1. Click on Subnet groups
+
+<img width="1590" height="278" alt="{AAA05042-E8FE-4254-A3B9-7748A2F2261A}" src="https://github.com/user-attachments/assets/f0ec186d-5c99-4ff8-b514-8b6fdbecbcab" />
+
+2. Create subnet group
+
+<img width="817" height="809" alt="{7E856A10-A115-4040-A7BF-B2D2B2AEE9AB}" src="https://github.com/user-attachments/assets/590df0ed-e0f6-43ae-836e-35dee845f173" />
+
+Note: You will need to choose atleast 2 VPC based on your EC2 instance details, check EC2 instance
+
+
+
+
+
+
+
+
 
 
 
