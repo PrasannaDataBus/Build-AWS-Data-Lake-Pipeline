@@ -1,0 +1,12 @@
+{
+  "CsvRowDelimiter": "\\n",
+  "CsvDelimiter": ",",
+  "CompressionType": "GZIP",
+  "DataFormat": "parquet",
+  "EnableStatistics": true,
+  "IncludeOpForFullLoad": true,
+  "TimestampColumnName": "dms_timestamp",
+  "CdcInsertsAndUpdates": true,
+  "DatePartitionEnabled": false,
+  "CdcPath": "cdc"
+}
