@@ -112,6 +112,8 @@ choose target endpoint -> select RDS DB instance -> configure endpoint
 
 provide the bucket path -> choose IAM role.
 
+### Note: Dont forget to choose "editor" in Endpoint settings as you will need to use JSON format when CDC enabled and it is a best practice to maintain data in a JSON format as it is raw injestion. For JSON script: Refer the .json file in this project.
+
 17. Test
 
 <img width="820" height="245" alt="{B91F9608-AC6C-4431-BD91-DE28DFE4FD90}" src="https://github.com/user-attachments/assets/3255a607-0574-48d2-a437-88a856227f33" />
