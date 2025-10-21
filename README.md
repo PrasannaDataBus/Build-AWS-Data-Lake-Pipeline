@@ -130,9 +130,12 @@ provide the bucket path -> choose IAM role.
 
 provide Task identifier -> choose endpoints (source database & target database) -> task mode (provisioned) -> choose provisioned instance -> choose task type (I have chosen Migrate and replicate) to enable CDC
 
+### Note: Sometimes your task might fail due to incompatibity configurations in your host system, in such cases you will not be able to select both full load and CDC rather you will need to select only full load.
+
 21. Configure settings
 
-<img width="1365" height="790" alt="{CAB142FB-480C-4D84-9EAF-EAA55BDD4573}" src="https://github.com/user-attachments/assets/713cd150-0b9a-407d-85b7-444634cd7108" />
+<img width="1530" height="751" alt="{74B71C02-3DFF-469D-8CCB-3D8772442772}" src="https://github.com/user-attachments/assets/beef506c-97d7-476a-bb62-7450f0a827d5" />
+
 
 22. Table mappings
 
@@ -147,6 +150,8 @@ you can add more selection rules if needed
 <img width="1389" height="195" alt="{8D181A08-DD42-4AAA-B014-1465ABBB0D1D}" src="https://github.com/user-attachments/assets/cfcb0e3a-4bd7-4b2d-a226-b084fe1a8aa0" />
 
 you can check this or leave out -> but it is a best practice to check
+
+### Note: Please pre assess your migrations process to evaluate pre-requisites and limitations.
 
 24. Migration task startup configuration
 
