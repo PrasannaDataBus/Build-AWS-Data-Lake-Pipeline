@@ -1,0 +1,12 @@
+{
+  "DataFormat": "json",
+  "CompressionType": "none",
+  "IncludeOpForFullLoad": true,
+  "IncludeOpForCDC": true,
+  "TimestampColumnName": "dms_timestamp",
+  "EnableStatistics": true,
+  "DatePartitionEnabled": false,
+  "AddColumnName": false,
+  "CdcPath": "cdc/",
+  "DataPath": "full-load/"
+}
