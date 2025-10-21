@@ -100,7 +100,7 @@ make sure you are in right replication instance
 
 14. Create endpoint
 
-15. Now create target endpoint**********************
+15. *************************************** Now create target endpoint ************************************************
 
 <img width="835" height="638" alt="{213B933B-B615-410D-AB23-B91B5013841B}" src="https://github.com/user-attachments/assets/08cd3ac6-2173-40e2-aaa4-a4c2a7f08799" />
 
