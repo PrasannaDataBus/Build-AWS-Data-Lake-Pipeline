@@ -116,7 +116,7 @@ Tip: When providing bucket path if you didnt create a folder previously while cr
 
 ### Note: Dont forget to choose "editor" in Endpoint settings as you will need to use PARQUET format when CDC enabled and it is a best practice to maintain data in a PARQUET format as it is raw injestion. See the next clip
 
-Follow the below Endpoint settings or refer the file 
+Follow the below Endpoint settings or refer the file TargetEndPointSettings.json
 
 <img width="797" height="573" alt="{323A55CA-DAB3-4C48-87B4-1C21538EEA66}" src="https://github.com/user-attachments/assets/1bb9d4bd-40f5-494a-8fc6-52dac460ee7a" />
 
@@ -173,6 +173,22 @@ choose automatic.
 25. Create task
 
 Tips: If fails you will need to check replication instance IP and add the ip to your host.
+
+## CONCLUSION: I have successfully created an S3 bucket to store raw data in parquest format. I have used Database migration service (DMS) to migrate data from MySQL DB to S3 Raw bucket.
+
+## Result:
+
+<img width="1088" height="245" alt="{0083C101-844C-4F2E-8B91-165F7237C883}" src="https://github.com/user-attachments/assets/84c534e2-70da-48bb-8bdf-952d86debd65" />
+
+## Options / Sub Services Used:
+
+1. S3 -> Create bucket
+2. DMS -> Subnet groups -> Create subnet group
+3. DMS -> Migrate or replicate -> Provisioned instances -> Create replication instance
+4. DMS -> Migrate or replicate -> Endpoints -> Create Endpoint
+5. DMS -> Migrate or replicate -> Task -> Create task
+
+Next: Data Cataloging, moving data from raw to transformed.
 
 
 
