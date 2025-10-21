@@ -112,7 +112,17 @@ choose target endpoint -> select RDS DB instance -> configure endpoint
 
 provide the bucket path -> choose IAM role.
 
-### Note: Dont forget to choose "editor" in Endpoint settings as you will need to use PARQUET format when CDC enabled and it is a best practice to maintain data in a PARQUET format as it is raw injestion.
+Tip: When providing bucket path if you didnt create a folder previously while creating S3 bucket, you can create one right in this step - browse your S3 bucket after add /folder name/ For Ex: test-bucket/raw-bronze/
+
+### Note: Dont forget to choose "editor" in Endpoint settings as you will need to use PARQUET format when CDC enabled and it is a best practice to maintain data in a PARQUET format as it is raw injestion. See the next clip
+
+Follow the below Endpoint settings or refer the file 
+
+<img width="797" height="573" alt="{323A55CA-DAB3-4C48-87B4-1C21538EEA66}" src="https://github.com/user-attachments/assets/1bb9d4bd-40f5-494a-8fc6-52dac460ee7a" />
+
+**** Extra connection attributes are also important but it will be automatically created when you save the editor. See below clip
+
+<img width="603" height="133" alt="{DF7AE3E1-B0AE-432E-9BEB-AEB94E75E5EE}" src="https://github.com/user-attachments/assets/b556bc4e-0ce1-42d8-9df4-7606db0af779" />
 
 17. Test
 
@@ -136,6 +146,7 @@ provide Task identifier -> choose endpoints (source database & target database) 
 
 <img width="1530" height="751" alt="{74B71C02-3DFF-469D-8CCB-3D8772442772}" src="https://github.com/user-attachments/assets/beef506c-97d7-476a-bb62-7450f0a827d5" />
 
+### Note: Please follow the above Settings as it is in the clip. And Why? When ingesting raw data from MySQL DB to S3 bucket, the LOB is Settings should be configured properly in order to have load status (Load completed) or else you will see Load completed with errors.
 
 22. Table mappings
 
