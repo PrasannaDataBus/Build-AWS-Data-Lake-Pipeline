@@ -188,7 +188,90 @@ Tips: If fails you will need to check replication instance IP and add the ip to 
 4. DMS -> Migrate or replicate -> Endpoints -> Create Endpoint
 5. DMS -> Migrate or replicate -> Task -> Create task
 
-Next: Data Cataloging, moving data from raw to transformed.
+## Create Data Catelog for Raw bucket:
+
+<img width="752" height="533" alt="{2758F16C-63C3-4796-B3D0-24A9616EBDA1}" src="https://github.com/user-attachments/assets/95c64db7-b946-445e-936c-4b9d3bed1ab4" />
+
+Step1: Add database in AWS Glue
+
+<img width="1884" height="320" alt="{EF701809-D4CC-4B59-BAD6-E15793B00C51}" src="https://github.com/user-attachments/assets/692f6f4a-29d2-4a1c-92e5-fbff77235f32" />
+
+Step 2: Provide database details (name, description, database settings)
+
+<img width="1144" height="508" alt="{E8CB610F-8211-4914-9F20-869629D551B4}" src="https://github.com/user-attachments/assets/d2e24648-7db2-4215-adf1-1a09efa731cb" />
+
+Step 3: Create Glue Crawler
+
+<img width="1612" height="297" alt="{B998FBC1-C324-45E5-B86F-F0F48704DB7F}" src="https://github.com/user-attachments/assets/633295ad-6a9c-425d-b1df-e6d4cf4a7c5d" />
+
+Step 4: Set crawler properties
+
+<img width="969" height="426" alt="{A3838C16-95DE-4EDF-88BF-C879A49BC908}" src="https://github.com/user-attachments/assets/ff10d510-d12b-41ef-b307-d7e03505ded0" />
+
+Step 5: Add data source
+
+<img width="595" height="819" alt="{DB3050E3-4932-48B0-9DCD-EC4307F96145}" src="https://github.com/user-attachments/assets/b0cf8053-7c36-4cf9-ba67-024e969d5317" />
+
+Step 6: Configure security settings
+
+<img width="1317" height="539" alt="{A39B30BC-1442-494F-9754-D1025422DA98}" src="https://github.com/user-attachments/assets/4d597359-1fd6-48c6-b822-1ef799e445ad" />
+
+Step 7: Set Output and scheduling
+
+<img width="1340" height="582" alt="{D10E2501-F071-4CA6-B446-C377A7039EB7}" src="https://github.com/user-attachments/assets/4e1119d0-fb14-46bd-a231-7a5c532990a2" />
+
+choose your target database -> advanced options, look the below clip
+
+<img width="1308" height="614" alt="{09FF5C1B-77FD-4B55-9816-B1DB4BDC51CF}" src="https://github.com/user-attachments/assets/31798d5a-4070-4c08-b805-b2088346f49f" />
+
+choose Frequency using Crawler schedule
+
+<img width="1299" height="148" alt="{99B3E349-AEBE-408A-A7AC-90762960D123}" src="https://github.com/user-attachments/assets/8294292c-a4ae-4eb8-905b-26d3b05742f6" />
+
+Step 8: Review and create
+
+## CONCLUSION: I have successfully created data catalog for raw_bucket using AWS Glue
+
+### Result:
+
+<img width="1596" height="190" alt="{9EEEE878-5774-4863-8A4B-B50B6E842685}" src="https://github.com/user-attachments/assets/51278864-3145-4f20-80e1-fbe324fba077" />
+
+## Note: Sometimes Crawler run will get succeeded but have a look at the Table changes from last run (if it is dash (-)) it means the table load is unsucessful. If you experience such case, you will need update your IAM policy associated with AWS Glue.
+
+<img width="869" height="784" alt="{66F69881-ED0F-45F4-8125-4B76788A967E}" src="https://github.com/user-attachments/assets/af21552c-aa71-4351-b22f-c68182d7a578" />
+
+## Options / Sub Services Used:
+
+1. AWS Glue -> Data Catalog -> Add Database
+2. AWS Glue -> Data Catalog -> Crawlers
+3. AWS Glue -> Data Catalog -> Tables
+4. AWS Glue -> Data Catalog Tables
+
+Next: Create Transformed zone
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
