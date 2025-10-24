@@ -291,7 +291,14 @@ Step 6: I will convert all column names to lower case and then replace spaces wi
 
 <img width="1499" height="832" alt="{BC46DB52-F7C9-4194-879B-60247350652B}" src="https://github.com/user-attachments/assets/622420c6-719b-4ba9-9be0-a884497e9a37" />
 
-** The above transformation query - refer 
+** The above transformation query - refer renamed_col.sql
+
+Step 6.1: Generate the SELECT statement automatically
+
+<img width="1491" height="819" alt="{D1614F80-0D7B-4E8D-9189-F9F15BB2F323}" src="https://github.com/user-attachments/assets/e8738baa-f1fc-433c-8bcb-297eb1539a5a" />
+
+** The above transformation query - refer renamed_col.sql
+
 
 
 
