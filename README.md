@@ -247,7 +247,65 @@ Step 8: Review and create
 3. AWS Glue -> Data Catalog -> Tables
 4. AWS Glue -> Data Catalog Tables
 
-Next: Create Transformed zone
+# Setup Transformed Zone
+
+Step 1: Create a folder in your s3 where the raw bucket has been previously created
+
+<img width="1613" height="521" alt="{D2B04473-59D0-4185-B180-31E1BFE2A933}" src="https://github.com/user-attachments/assets/2ebb236b-9614-4e74-a9ab-ff441b700848" />
+
+Step 2: Create Glue Database for the transformed zone
+
+<img width="1629" height="179" alt="{F61A085D-6125-48F7-BAD4-A89B5760B1CE}" src="https://github.com/user-attachments/assets/7579c453-3a5e-4da3-bd6a-81e884fd47f2" />
+
+<img width="1633" height="554" alt="{46669EDC-6B53-4B09-8638-04EA5A8DCE4C}" src="https://github.com/user-attachments/assets/aead10d7-71ef-4298-ad84-2ab655c6ce36" />
+
+Step 3: We Use Athena to perform transformation
+
+<img width="925" height="783" alt="{0809E9B9-8D94-4F92-97BA-8FC0EAF733DE}" src="https://github.com/user-attachments/assets/9a877312-643b-4d0e-b741-1e70f3e4a419" />
+
+### Note: You can either launch Trino SQL query editor or PySpark Editor
+
+Step 4: Review Trino SQL editor in Athena
+
+<img width="1841" height="655" alt="{21C5E5CD-BCE4-43E9-ADA7-9AC3CA3CB4B7}" src="https://github.com/user-attachments/assets/a789fc58-7a8b-4f0e-8096-1f02f79c4b70" />
+
+Step 5: Run the below query to confirm whether raw table is visible
+
+### Query: SHOW TABLES IN raw_zone_db;
+
+## Important: Before you run your first query, you need to set up a query result location in Amazon S3.
+
+Step 5.1: Configure query related editor settings
+
+<img width="1641" height="402" alt="{02A457C7-948C-4F3C-921C-8AFAF3CFC158}" src="https://github.com/user-attachments/assets/bded512a-19a9-4430-a395-97da93d7d270" />
+
+** you can create a dedicated folder in s3 to save Athena query results
+
+<img width="1851" height="635" alt="{545A065C-9BC4-403D-85CE-B7FB9FCDB048}" src="https://github.com/user-attachments/assets/5b44b652-db4a-451b-be50-7aa455396d56" />
+
+The query result is successful.
+
+Step 6: I will convert all column names to lower case and then replace spaces with underscore
+
+### Important Detail: Athena does not automatically change column names. So I should rebuild the SELECT list with renamed columns.
+
+<img width="1499" height="832" alt="{BC46DB52-F7C9-4194-879B-60247350652B}" src="https://github.com/user-attachments/assets/622420c6-719b-4ba9-9be0-a884497e9a37" />
+
+** The above transformation query - refer 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 🛡️ Copyright & Compliance Notice
 
