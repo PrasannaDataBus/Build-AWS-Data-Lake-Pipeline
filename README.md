@@ -249,9 +249,9 @@ Step 8: Review and create
 
 # Setup Transformed Zone
 
-Step 1: Create a folder in your s3 where the raw bucket has been previously created
+Step 1: Create a new s3 bucket to store transformed data
 
-<img width="1613" height="521" alt="{D2B04473-59D0-4185-B180-31E1BFE2A933}" src="https://github.com/user-attachments/assets/2ebb236b-9614-4e74-a9ab-ff441b700848" />
+<img width="1628" height="781" alt="{A2D65C78-D316-4BA5-A6ED-EB73750E44A9}" src="https://github.com/user-attachments/assets/b6195570-dbeb-497e-8993-07957f7ed85c" />
 
 Step 2: Create Glue Database for the transformed zone
 
@@ -297,7 +297,16 @@ Step 6.1: Generate the SELECT statement automatically
 
 <img width="1491" height="819" alt="{D1614F80-0D7B-4E8D-9189-F9F15BB2F323}" src="https://github.com/user-attachments/assets/e8738baa-f1fc-433c-8bcb-297eb1539a5a" />
 
-** The above transformation query - refer renamed_col.sql
+** The above transformation query - refer rename_select.sql
+
+Step 6.2: Build Transformed Table, before that copy the output of previous query
+
+<img width="1491" height="173" alt="{F07322FE-7D05-47F2-B1B6-013DB8B9F529}" src="https://github.com/user-attachments/assets/f3f2a1d4-1957-4921-b09e-116fa94b0e8d" />
+
+** The above transformation query - refer rename_select.sql
+
+
+
 
 
 
