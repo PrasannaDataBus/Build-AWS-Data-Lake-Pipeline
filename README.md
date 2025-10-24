@@ -174,7 +174,7 @@ choose automatic.
 
 Tips: If fails you will need to check replication instance IP and add the ip to your host.
 
-## CONCLUSION: I have successfully created an S3 bucket to store raw data in parquest format. I have used Database migration service (DMS) to migrate data from MySQL DB to S3 Raw bucket.
+## CONCLUSION: I have successfully created an S3 bucket to store raw data in parquet format. I have used Database migration service (DMS) to migrate data from MySQL DB to S3 Raw bucket.
 
 ## Result:
 
@@ -303,25 +303,32 @@ Step 6.2: Build Transformed Table, before that copy the output of previous query
 
 <img width="1491" height="173" alt="{F07322FE-7D05-47F2-B1B6-013DB8B9F529}" src="https://github.com/user-attachments/assets/f3f2a1d4-1957-4921-b09e-116fa94b0e8d" />
 
-** The above transformation query - refer rename_select.sql
+** The above transformation query - refer write_transformed.sql
 
+## Review the result: SELECT * FROM transformed_zone_db.aws_test_transformed LIMIT 10;
 
+### Note: Check in S3 and Glue whether the transformed zone related bucket has received the data and the created Glue database contains the table
 
+** I have also reveiwed the Data Catalog for transformed zone
 
+## CONCLUSION: I have successfully created an S3 bucket to store transformed data in parquet format. I have used Athena to query transformations using trino sql editor
 
+## Result:
 
+** Glue Schema
 
+<img width="839" height="780" alt="{13D55DA1-4170-4688-B7E3-291E3DCC5D66}" src="https://github.com/user-attachments/assets/2a600406-18b7-4fca-9bc9-90800c631058" />
 
+** Query results - Athena
 
+<img width="1494" height="630" alt="{5E8DD259-3050-43A8-85D6-90776A8FA007}" src="https://github.com/user-attachments/assets/7c687bdd-78b2-42b5-a18e-b021b4a796dd" />
 
+## Options / Sub Services Used:
 
-
-
-
-
-
-
-
+1. S3 -> Create bucket
+2. AWS Glue -> Add Database
+3. Athena -> Trino SQL Editor
+4. AWS Glue -> Data Catalog Tables
 
 🛡️ Copyright & Compliance Notice
 
