@@ -1,5 +1,107 @@
 # Build-AWS-Data-Lake-Pipeline
 
+## Project Overview: AWS Data Lake (Raw → Transformed → Curated)
+
+### Objective:
+
+To design and implement an end-to-end data lake architecture on AWS that automates ingestion, cataloging, transformation, and governance of structured data using managed AWS services.
+
+### The goal is to:
+
+- Build a scalable and governed data lake.
+- Enable data lineage across raw, transformed, and curated zones.
+- Support analytical queries through AWS Glue and Athena.
+- Implement secure, role-based access using AWS Lake Formation.
+
+### Architecture Summary:
+
+1. Data Ingestion Layer (Raw Zone)
+
+Service Used:
+AWS Database Migration Service (DMS)
+Amazon S3 (Raw Bucket)
+
+Process:
+- DMS migrated source database data into S3 bucket (s3://injestraw/raw/...) as Parquet files.
+- The data in this zone is stored in its original form with minimal processing.
+
+2. Metadata Cataloging (Glue Data Catalog / Lake Formation)
+
+Services Used:
+AWS Glue
+AWS Lake Formation
+
+Process:
+- AWS Glue Crawler created metadata tables for raw data.
+- Catalogs were registered in Lake Formation for fine-grained governance.
+
+Databases were created for each layer:
+
+raw_zone_db
+transformed_zone_db
+curated_zone_db
+
+Lake Formation registered S3 data locations and assigned ownership and permissions.
+
+3. Transformation Layer (Transformed Zone)
+
+Services Used:
+Amazon Athena (SQL transformation)
+AWS Glue (optional ETL)
+Amazon S3 (Transformed Bucket)
+
+Process:
+- Queries in Athena (Trino SQL) read data from raw_zone_db.
+- Results were stored as Parquet files in s3://transformeddata/transformed/....
+- New Glue table created automatically (transformed_zone_db.aws_test_transformed).
+
+4. Curated Zone (Analytical / Business-Ready Data)
+
+Services Used:
+AWS Glue
+Amazon Athena
+Amazon S3 (Curated Bucket)
+
+Process:
+- Curated database (curated_zone_db) created in Glue and governed by Lake Formation.
+- Future analytical or machine learning–ready data will be placed here after business rule application.
+
+5. Governance & Security
+
+Services Used:
+AWS Lake Formation
+AWS Identity and Access Management (IAM)
+
+Process:
+- Lake Formation registered S3 data locations.
+- Ownership assigned to AWSGlueServiceRole-LakeTest.
+- Database-level and table-level permissions granted via Lake Formation (not IAM).
+- Enabled fine-grained governance for future auditing and compliance.
+
+### Key AWS Services Used
+
+Service	Purpose:
+
+Amazon S3	Data storage (Raw, Transformed, Curated zones)
+AWS Glue	Data catalog, crawlers, and optional ETL jobs
+AWS DMS	Initial data migration from source to S3
+Amazon Athena	SQL-based transformation and analysis
+AWS Lake Formation	Centralized governance, access control, and ownership
+AWS IAM	Role-based access for Glue and Athena
+Amazon CloudWatch	Job and crawler monitoring (logs, metrics)
+
+### Governance Approach
+
+- Lake Formation manages access at the database, table, and column level.
+- IAM roles registered as principals.
+- S3 locations registered for each data zone for secure data lake operations.
+
+### Outcome:
+
+- Successfully implemented a three-tier AWS Data Lake architecture.
+- Achieved automated ingestion, schema cataloging, and governed access control.
+- Created a reusable framework for future datasets, transformations, and analytics.
+
 ## STEP 1: Setting Up S3 Raw Bucket
 
 1. Create Bucket
