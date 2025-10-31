@@ -330,6 +330,28 @@ Step 6.2: Build Transformed Table, before that copy the output of previous query
 3. Athena -> Trino SQL Editor
 4. AWS Glue -> Data Catalog Tables
 
+# Setup Curated Zone:
+
+Before that you will need to run the below query in Athena to see the transformed_zone to understand and optimise the fields and their associated data types.
+
+DESCRIBE transformed_zone_db.aws_test_transformed;
+
+After follow the below steps,
+
+Step 1: Create curated bucket in S3
+
+<img width="1618" height="761" alt="{8E2161E0-A715-4658-8743-E59FF741CFF2}" src="https://github.com/user-attachments/assets/2d1c240c-0ae8-4605-b558-c45b6e7ebad2" />
+
+Step 2: Create a curated Database in Glue
+
+<img width="1110" height="501" alt="{C4C4CBE9-A633-4732-840B-EF128BFD0FE7}" src="https://github.com/user-attachments/assets/80a601ae-8593-4a11-9c1f-a8ad2d034908" />
+
+Step 3: Update your Glue IAM role to allow access
+
+Note: You can use create inline policy option to provide policy access for Glue to S3
+
+Step 4: Create table in curated zone using Athena / SQL query
+
 🛡️ Copyright & Compliance Notice
 
 © 2025 PrasannaDataBus. All rights reserved.
