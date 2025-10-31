@@ -18,7 +18,7 @@ To design and implement an end-to-end data lake architecture on AWS that automat
 1. Data Ingestion Layer (Raw Zone)
 
 Service Used:
-AWS Database Migration Service (DMS)
+AWS Database Migration Service (DMS),
 Amazon S3 (Raw Bucket)
 
 Process:
@@ -28,7 +28,7 @@ Process:
 2. Metadata Cataloging (Glue Data Catalog / Lake Formation)
 
 Services Used:
-AWS Glue
+AWS Glue,
 AWS Lake Formation
 
 Process:
@@ -37,8 +37,8 @@ Process:
 
 Databases were created for each layer:
 
-raw_zone_db
-transformed_zone_db
+raw_zone_db,
+transformed_zone_db,
 curated_zone_db
 
 Lake Formation registered S3 data locations and assigned ownership and permissions.
@@ -46,8 +46,8 @@ Lake Formation registered S3 data locations and assigned ownership and permissio
 3. Transformation Layer (Transformed Zone)
 
 Services Used:
-Amazon Athena (SQL transformation)
-AWS Glue (optional ETL)
+Amazon Athena (SQL transformation),
+AWS Glue (optional ETL),
 Amazon S3 (Transformed Bucket)
 
 Process:
@@ -58,8 +58,8 @@ Process:
 4. Curated Zone (Analytical / Business-Ready Data)
 
 Services Used:
-AWS Glue
-Amazon Athena
+AWS Glue,
+Amazon Athena,
 Amazon S3 (Curated Bucket)
 
 Process:
@@ -69,7 +69,7 @@ Process:
 5. Governance & Security
 
 Services Used:
-AWS Lake Formation
+AWS Lake Formation,
 AWS Identity and Access Management (IAM)
 
 Process:
