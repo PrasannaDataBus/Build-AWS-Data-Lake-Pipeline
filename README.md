@@ -350,7 +350,53 @@ Step 3: Update your Glue IAM role to allow access
 
 Note: You can use create inline policy option to provide policy access for Glue to S3
 
-Step 4: Create table in curated zone using Athena / SQL query
+Step 4: Create table in curated zone using Athena / SQL query - refer script create-curated-table.sql
+
+<img width="778" height="292" alt="{0B2091E0-1C62-4203-B8FE-D41428F0835D}" src="https://github.com/user-attachments/assets/3c20cbea-4412-42d0-9399-340a8027d6e8" />
+
+Step 5: Once query successful, check Glue and S3 to review the above steps.
+
+** Done Curated Zone has been created and next we will setup Lake Formation.
+
+# Setup Lake Formation:
+
+### Note: Lake Formation will let you control who can: 
+
+- Read/write to each S3 zone
+- Query certain databases/tables
+- Manage Glue crawlers securely
+- Integrate with Athena, Redshift, QuickSight, and EMR
+
+Best Practice:
+
+Keep at least two Data Lake admins:
+1. Your IAM user	To manually manage Lake Formation
+2. The Glue role	So ETL jobs and crawlers can operate automatically
+
+Step 1: Register your buckets in Lake Formation - Permissions -> Data Permissions
+
+<img width="1587" height="240" alt="{F31B1EEA-7FE7-43D8-84C2-F93E29B56258}" src="https://github.com/user-attachments/assets/c436a694-c3ae-4dc5-9b23-e55cb5ed36c6" />
+
+Step 2: Configure Permissions
+
+<img width="855" height="633" alt="{2D7E65C6-5237-4433-93E5-A3BB2B2B7E64}" src="https://github.com/user-attachments/assets/fa208a79-4dc6-4543-a5d2-8188bbf4f66d" />
+
+** choose your service role
+
+Step 3: Choose type of permissions
+
+<img width="805" height="654" alt="{9C121E1E-08C6-4032-BF1E-D7D152785F2F}" src="https://github.com/user-attachments/assets/db27170e-fa45-426e-af40-de391f8f18f7" />
+
+## Best Practice:
+
+Whenever you want Lake Formation to manage your data lake (recommended best practice):
+
+- Always use IAM for permissions / administration never use root.
+- Always build pipelines by giving Lake Formation the governance control.
+- Register your S3 buckets (or subpaths) inside Lake Formation
+- Create your databases from within Lake Formation, not directly in Glue.(This automatically sets LF as the governing authority.)
+- Assign proper IAM roles (Glue, Athena, etc.) as principals in Lake Formation using the “Grant” screen — for example:
+- Keep those two IAM-only checkboxes unchecked in Lake Formation settings.
 
 🛡️ Copyright & Compliance Notice
 
