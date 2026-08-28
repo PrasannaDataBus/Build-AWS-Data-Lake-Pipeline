@@ -502,7 +502,7 @@ Whenever you want Lake Formation to manage your data lake (recommended best prac
 
 🛡️ Copyright & Compliance Notice
 
-© 2025 PrasannaDataBus. All rights reserved.
+© 2026 PrasannaDataBus. All rights reserved.
 This repository and its contents are intended solely for self learning and portfolio demonstration purposes.
 
 All screenshots, configuration snippets, and architecture diagrams related to Amazon Web Services (AWS) are used under fair use for illustrative and informational purposes only.
